@@ -1,0 +1,17 @@
+<view class="bar">
+  <view
+    class="bar__item"
+    wx:for="{{list}}"
+    wx:key="item.pagePath"
+    bind:tap="handleClick"
+    data-index="{{index}}"
+    data-path="{{ item.pagePath }}"
+  >
+    <image
+      src="{{ index === selected ? item.selectedIconPath : item.iconPath }}"
+      mode="aspectFit"
+      class="bar__img"
+    />
+    <view class="bar__text">{{ item.text }}</view>
+  </view>
+</view>

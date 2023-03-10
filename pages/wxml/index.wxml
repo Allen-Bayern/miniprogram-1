@@ -1,0 +1,10 @@
+<!--pages/wxml/index.wxml-->
+<view>
+  <block
+    wx:for="{{[1, 2, 3]}}"
+    wx:key="item"
+  >
+    <view>{{ index }}</view>
+    <view>{{ item }}</view>
+  </block>
+</view>

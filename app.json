@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/wxml/index",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "MiniProgram",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "Logs",
+        "iconPath": "static/tabbar/log.jpg",
+        "selectedIconPath": "static/tabbar/log-selected.jpg"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "static/tabbar/home.jpg",
+        "selectedIconPath": "static/tabbar/home-selected.jpg"
+      },
+      {
+        "pagePath": "pages/wxml/index",
+        "text": "WXML",
+        "iconPath": "static/tabbar/wxml.jpg",
+        "selectedIconPath": "static/tabbar/wxml-selected.jpg"
+      }
+    ]
+  }
+}
