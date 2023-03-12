@@ -22,8 +22,8 @@ Component({
   },
   methods: {
     handleClick(e) {
-      var path = e.currentTarget.dataset.path;
-      var index = e.currentTarget.dataset.index;
+      const path = e.currentTarget.dataset.path;
+      const index = e.currentTarget.dataset.index;
       wx.switchTab({
         url: path,
       });

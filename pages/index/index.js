@@ -9,7 +9,22 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false,
+    defaultData: {
+      name: 'hello',
+      typeBar: 1,
+      share: 2,
+      background: '#333',
+    },
+    navData: {
+      title: 'hello world'
+    },
+    // nav
+    navBarHeight: app.globalData.navBarHeight, //导航栏高度
+    menuRight: app.globalData.menuRight, // 胶囊距右方间距（方保持左、右间距一致）
+    menuBottom: app.globalData.menuBottom,
+    menuHeight: app.globalData.menuHeight,
+    menuTop: app.globalData.menuTop,
   },
   // 事件处理函数
   bindViewTap() {
@@ -43,6 +58,25 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  // 返回
+  handleBackClick() {
+    const pages = getCurrentPages();
+    if (pages.length >= 2) {
+      wx.navigateBack({
+        delta: 1
+      })
+    } else {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    }
+  },
+  // 回到首页
+  handleHomeClick() {
+    wx.switchTab({
+      url: '/pages/index/index',
     })
   }
 })
